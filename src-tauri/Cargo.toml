@@ -1,6 +1,6 @@
 [package]
 name = "tinymd"
-version = "0.1.0"
+version = "0.1.1"
 description = "tinymd - ultra lightweight Markdown reader"
 authors = ["doulang <110425271@qq.com>"]
 edition = "2024"
