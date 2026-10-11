@@ -68,8 +68,12 @@ function cycleTheme(): string {
 }
 
 function currentFontSize(): number {
-  const v = Number(localStorage.getItem(FONT_KEY));
-  return Number.isFinite(v) ? v : FONT_DEFAULT;
+  const raw = localStorage.getItem(FONT_KEY);
+  const v = raw === null ? NaN : Number(raw);
+  if (!Number.isFinite(v) || v < FONT_MIN || v > FONT_MAX) {
+    return FONT_DEFAULT;
+  }
+  return v;
 }
 
 function applyFontSize(px: number): void {
