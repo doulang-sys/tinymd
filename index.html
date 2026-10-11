@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>tinymd</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <header id="topbar">
+      <button id="btn-open" class="topbar-btn" title="打开目录 (Ctrl+O)">打开</button>
+      <span id="dir-label" class="dir-label"></span>
+      <div class="topbar-spacer"></div>
+      <button id="btn-font-down" class="topbar-btn" title="缩小字体 (Ctrl+-)">A-</button>
+      <button id="btn-font-up" class="topbar-btn" title="放大字体 (Ctrl+=)">A+</button>
+      <button id="btn-theme" class="topbar-btn" title="切换主题">主题</button>
+    </header>
+    <div id="layout">
+      <aside id="tree-panel">
+        <div id="tree" class="tree"></div>
+      </aside>
+      <main id="content">
+        <div id="empty-state" class="empty-state">
+          <h2>tinymd</h2>
+          <p>打开一个目录，或拖入 .md 文件开始阅读</p>
+          <p class="kbd-hint">Ctrl+O 打开目录 · Ctrl+P 快速打开文件</p>
+        </div>
+        <article id="md-view" hidden></article>
+      </main>
+      <aside id="toc-panel">
+        <div class="toc-title">大纲</div>
+        <nav id="toc" class="toc"></nav>
+      </aside>
+    </div>
+    <div id="quickopen" class="quickopen" hidden>
+      <div class="quickopen-box">
+        <input id="quickopen-input" type="text" placeholder="输入文件名…" autocomplete="off" spellcheck="false" />
+        <ul id="quickopen-list" class="quickopen-list"></ul>
+      </div>
+    </div>
+    <input id="file-input" type="file" accept=".md,.markdown" hidden />
+  </body>
+</html>
